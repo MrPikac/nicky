@@ -1,17 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div @click="something" id="app">
+        <img id="nick" alt="Nicky" src="./assets/tumblr_mqg78sIALY1swnmv6o1_400.png">
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+
+  },
+  data() {
+
+  },
+
+  methods: {
+    something: function() {
+      var x = event.clientX;
+      var y = event.clientY;
+      var img = document.getElementById("nick");
+      img.style.left = this.x;
+      img.style.top = this.y;
+    }
   }
 }
 </script>
